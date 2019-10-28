@@ -15,19 +15,22 @@ typedef struct stdout_
 	int (*pfunc)(va_list);
 } stdout_t;
 
+int p_rint(unsigned int value, int length);
+int basecnv(unsigned int value, int b, int length);
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int p_char(va_list *args);
 int p_str(va_list *args);
 int p_bin(va_list *args);
 int p_int(va_list *args);
+int p_dbl(va_list *args);
 int p_uint(va_list *args);
 int p_oct(va_list *args);
 int p_hex(va_list *args);
 int p_mhex(va_list *args);
 int p_rev(va_list *args);
 int p_rot13(va_list *args);
-int basecnv(unsigned int value, int b, int length);
 
 
 
