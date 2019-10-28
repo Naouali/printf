@@ -23,6 +23,8 @@ stdout_t stdout[] = {
 {"o", p_oct},
 {"x", p_hex},
 {"X", p_mhex},
+{"r", p_rev},
+{"R", p_rot13},
 {NULL, NULL}
 };
 
