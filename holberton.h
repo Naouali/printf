@@ -15,9 +15,10 @@ typedef struct stdout_
 	int (*pfunc)(va_list);
 } stdout_t;
 
+int _putchar(char c);
 int _printf(const char *format, ...);
-
-
+int p_char(va_list *args);
+int p_str(va_list *args);
 
 
 
