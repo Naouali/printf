@@ -2,14 +2,15 @@
 #include "holberton.h"
 
 
-__printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
-    va_list args;
-    int done;
-    stdout_t stdout[] = {};
-    va_start(args, format);
-    done = vfprintf(stdout, format, args);
-    va_end(args);
+va_list args;
+int done;
+stdout_t stdout[] = {};
 
-    return done;
+va_start(args, format);
+done = vfprintf(stdout, format, args);
+va_end(args);
+
+return (done);
 }
