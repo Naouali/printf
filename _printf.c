@@ -16,6 +16,13 @@ int done;
 stdout_t stdout[] = {
 {"c", p_char},
 {"s", p_str},
+{"b", p_bin},
+{"i", p_int},
+{"d", p_int},
+{"u", p_uint},
+{"o", p_oct},
+{"x", p_hex},
+{"X", p_mhex},
 {NULL, NULL}
 };
 
