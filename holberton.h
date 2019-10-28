@@ -1,13 +1,13 @@
-#if !defined(_PRINTF_H)
+#ifndef _PRINTF_H
 #define _PRINTF_H
 
 #include <stdarg.h>
 
 /**
-* struct convert - structure for symbols and functions
+* struct stdout_ - structure for symbols and functions
 *
 * @sym: The operator
-* @f: The function associated
+* @pfunc: The function associated
 */
 typedef struct stdout_
 {
