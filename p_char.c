@@ -11,7 +11,8 @@
 
 int p_char(va_list *args)
 {
-     char c = va_arg(*args, char);
-     _putchar(c);
-     return (1);
+	char c = va_arg(*args, char);
+
+	_putchar(c);
+	return (1);
 }
