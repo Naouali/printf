@@ -1,42 +1,26 @@
-#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
-int reversed(int *e);
 
 /**
-* p_int - function to print integer
-* @args: va_list args
-* Return: int
-*/
-
-int p_int(va_list *args)
+ * print_int - writes the integer i
+ * @args: The name for va_list
+ *
+ * Return: On success 1.
+ */
+int print_int(va_list *args)
 {
-	unsigned int e;
+	int i = 0, length = 0;
+	unsigned int ul;
 
-	if (arg(va_list *args, int) < 0)
-	e = -( arg(va_list *args, int));
-	_putchar(e + '0');
-	reversed(e);
-	_putchar(e + '0');
-
+	i = va_arg(*args, int);
+	if (i < 0)
+	{
+		_putchar('-');
+		ul = -i;
+        length = 1;
+	}
+	else
+		ul = i;
+        length += p_rint(ul, 0);
+	return (length + 1);
 }
-
-/**
-* reversed - function to reverse int
-*@e: int
-*Return: reversed int
-*/
-int reversed(int *e)
-{
-	int rev = 0;
-
-	while (e != 0)
-{
-	rev = rev * 10;
-	rev = rev + e % 10;
-	e = n / 10;
-}
-	return (e);
-}
-
-
