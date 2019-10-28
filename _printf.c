@@ -3,7 +3,7 @@
 
 /**
  * _printf - function to print anything
- *@format: function argument
+ * @format: given argument
  * Return: int
  */
 
