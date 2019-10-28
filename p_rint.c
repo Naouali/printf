@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include "holberton.h"
 /**
- * p_rint - print uint rev 
+ * p_rint - print uint rev
  * @value: The number to  printe
  * @length: count of digits to be printed.
  * Return: length.
