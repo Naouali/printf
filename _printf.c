@@ -5,8 +5,8 @@
 
 /**
  * _printf - function to print anything
- * @format: given argument
- * Return: int
+ * @format: given argument to the function
+ * Return: integer
  */
 
 int _printf(const char *format, ...)

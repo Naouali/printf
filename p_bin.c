@@ -5,7 +5,7 @@
  * @value: The number to be printed
  * @length: The amount of digits to be printed
  *
- * Return: On success length.
+ * Return: On success length and if NULL -1
  */
 int p_base2(unsigned int value, int length)
 {

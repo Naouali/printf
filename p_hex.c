@@ -17,7 +17,7 @@ int p_base16(unsigned int value, int length)
 	return (length);
 }
 /**
- * p_hex - writes in binary
+ * p_hex - writes in binary language
  * @args: The name for va_list
  *
  * Return: int .
