@@ -6,7 +6,7 @@
 /**
  * p_char - function to print a caracter
  * @args: argument of type va_list
- * Return: 1
+ * Return: integer 1
  */
 
 int p_char(va_list *args)
