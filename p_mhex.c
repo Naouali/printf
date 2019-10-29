@@ -28,7 +28,7 @@ int p_mhex_r(unsigned long value, int length)
  */
 int p_mhex(va_list *args)
 {
-	int length = 2;
+	int length = 0;
 	unsigned long value = va_arg(*args, unsigned long);
 
 	if (value == 0)
@@ -44,7 +44,7 @@ int p_mhex(va_list *args)
 	{
 	_putchar('0');
 	_putchar('x');
-	length += p_mhex_r(value, length) + 1;
+	length = p_mhex_r(value, length) + 1;
 	}
 	return (length);
 }
