@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
+#include <stdlibh>
 
 /**
  * slprntr - Selects a printer
