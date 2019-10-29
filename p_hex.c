@@ -2,15 +2,15 @@
 #include "holberton.h"
 
 /**
- * p_bin - writes in binary
- * @params: The name for va_list
+ * p_hex - writes in binary
+ * @args: The name for va_list
  *
  * Return: int .
  */
-int p_bin(va_list params)
+int p_hex(va_list *args)
 {
 	int length = 0;
-	unsigned int value = va_arg(params, unsigned int);
+	unsigned int value = va_arg(*args, unsigned int);
 
 	length = basecnv(value, 16, length) + 1;
 	return (length);

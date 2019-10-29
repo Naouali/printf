@@ -9,9 +9,9 @@
  * Return: 1
  */
 
-int p_char(va_list args)
+int p_char(va_list *args)
 {
-	char c = va_arg(args, char);
+	char c = va_arg(*args, int);
 
 	_putchar(c);
 	return (1);

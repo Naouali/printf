@@ -11,13 +11,13 @@
 stdout_t slprntr(stdout_t stdout[], char format)
 {
 	int i = 0;
+	int formats = 16;
 
-	for (; stdout[i].sym; i++)
+	for (; i < formats; i++)
 		if (stdout[i].sym == format)
-			break;
-	return (stdout[i]);
+			return (stdout[i]);
+	return (stdout[i - 1]);
 }
-
 
 /**
 * _vfprintf - function to print
@@ -27,30 +27,37 @@ stdout_t slprntr(stdout_t stdout[], char format)
 *
 * Return: int
 */
-int _vfprintf(stdout_t stdout[], const char *format, va_list args)
+int _vfprintf(stdout_t stdout[], const char *format, va_list *args)
 {
-int plength = 0;
-int i = 0;
-stdout_t selfunc;
-if (!format || (format[0] == '%' && !format[1]))
-	return (-1);
+	int plength = 0;
+	stdout_t selfunc;
+	int i = 0, p_flag = 1;
 
-while (format[i])
-{
-	if (format[i] != '%')
+	if ((format == NULL) || (format[0] == '%' && !format[1]))
+		return (-1);
+
+	while (format[i] != '\0')
 	{
-		plength++;
-		_putchar(format[i]);
+		if (format[i] != '%')
+			if (p_flag)
+				plength += _putchar(format[i]);
+			else
+			{
+				selfunc = slprntr(stdout, format[i]);
+				if (selfunc.sym != '*')
+					plength += selfunc.pfunc(args);
+				else
+					plength += _putchar('%') + _putchar(format[i]);
+				p_flag = 1;
+			}
+		else if (p_flag)
+			p_flag = 0;
+		else
+		{
+			plength += _putchar(format[i]);
+			p_flag = 1;
+		}
 		i++;
 	}
-	else
-	{
-		i++;
-		selfunc = slprntr(stdout, format[i]);
-		plength += selfunc.pfunc(args);
-		i++;
-	}
-}
-
-return (plength);
+	return (plength);
 }
