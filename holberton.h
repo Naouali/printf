@@ -17,7 +17,7 @@ typedef struct stdout_
 	int (*pfunc)(va_list);
 } stdout_t;
 
-
+int _vfprintf(stdout_t stdout[], char *format, va_list args);
 int p_rint(unsigned int value, int length);
 int basecnv(unsigned int value, int b, int length);
 

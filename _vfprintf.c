@@ -29,8 +29,28 @@ pfunc slprntr(stdout_t stdout[], char format)
 */
 int _vfprintf(stdout_t stdout[], char *format, va_list args)
 {
-int plength;
+int plength = 0;
+int i = 0;
+pfunc selfunc;
+if (!format || (format[0] == '%' && !format[1]))
+	return (-1);
 
+while (format[i])
+{
+	if (format[i] != '%')
+	{
+		plength++;
+		_putchar(format[i]);
+		i++;
+	}
+	else
+	{
+		i++;
+		selfunc = slprntr(stdout, format[i]);
+		plength += selfunc(args);
+		i++;
+	}
+}
 
 return (plength);
 }
