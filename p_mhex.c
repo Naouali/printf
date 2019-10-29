@@ -5,7 +5,7 @@
  * p_mhex_r - prints number in base 16 recursively
  * @value: The number to be printed
  * @length: The amount of digits to be printed.
- * Return: length.
+ * Return: integer length.
  */
 int p_mhex_r(unsigned int value, int length)
 {
