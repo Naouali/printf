@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
- * p_hex - writes in binary
+ * p_hex - writes in binary language
  * @args: The name for va_list
  *
  * Return: int .
