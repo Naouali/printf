@@ -2,9 +2,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
- * p_strS - prints a string
- * @args: the list of arguments
- * Return: int
+ * p_strS - prints a string.
+ * @args: the list of arguments.
+ * Return: int.
  */
 int p_strS(va_list *args)
 {
