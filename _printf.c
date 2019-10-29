@@ -16,6 +16,7 @@ int done;
 stdout_t stdout[] = {
 {'c', p_char},
 {'s', p_str},
+{'S', p_str},
 {'b', p_bin},
 {'i', p_int},
 {'d', p_dbl},
@@ -28,11 +29,11 @@ stdout_t stdout[] = {
 {'x', p_mhex},
 {'r', p_rev},
 {'R', p_rot13},
-{'?', NULL}
+{'*', p_spcl}
 };
 
 va_start(args, format);
-done = _vfprintf(stdout, format, args);
+done = _vfprintf(stdout, format, &args);
 va_end(args);
 
 return (done);
