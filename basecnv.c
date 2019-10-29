@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * basecnv - prints numbers to base b
  * @value: The number to be printed
@@ -15,20 +16,20 @@ else if (b == 16)
 if (value % b >= 10)
 {
 length = basecnv(value / b, b, length + 1);
-putchar(value % b + 'A' - 10);
+_putchar(value % b + 'A' - 10);
 return (length);
 }
 else
 {
 length = basecnv(value / b, b, length + 1);
-putchar(value % b + '0');
+_putchar(value % b + '0');
 return (length);
 }
 }
 else
 {
 length = basecnv(value / b, b, length + 1);
-putchar(value % b + '0');
+_putchar(value % b + '0');
 return (length);
 }
 }

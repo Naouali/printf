@@ -7,12 +7,12 @@
  *
  * Return: On success 1.
  */
-int print_int(va_list *args)
+int print_int(va_list args)
 {
 int i = 0, length = 0;
 unsigned int ul;
 
-i = va_arg(*args, int);
+i = va_arg(args, int);
 if (i < 0)
 {
 _putchar('-');

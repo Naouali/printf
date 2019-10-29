@@ -9,7 +9,7 @@
 int p_rint(unsigned int value, int length)
 {
 	if (value / 10)
-		print_number(value / 10, length + 1);
+		p_rint(value / 10, length + 1);
 	_putchar(value % 10 + '0');
 	return (length);
 }

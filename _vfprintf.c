@@ -8,14 +8,14 @@
  * @format: the format to be printed
  * Return: the printer selected for elements to print.
  */
-pfunc slprntr(stdout_t stdout[], char format)
+stdout_t slprntr(stdout_t stdout[], char format)
 {
 	int i = 0;
 
-	for (; i < stdout[i].sym; i++)
+	for (; stdout[i].sym; i++)
 		if (stdout[i].sym == format)
 			break;
-	return (stdout[i].pfunc);
+	return (stdout[i]);
 }
 
 
@@ -27,11 +27,11 @@ pfunc slprntr(stdout_t stdout[], char format)
 *
 * Return: int
 */
-int _vfprintf(stdout_t stdout[], char *format, va_list args)
+int _vfprintf(stdout_t stdout[], const char *format, va_list args)
 {
 int plength = 0;
 int i = 0;
-pfunc selfunc;
+stdout_t selfunc;
 if (!format || (format[0] == '%' && !format[1]))
 	return (-1);
 
@@ -47,7 +47,7 @@ while (format[i])
 	{
 		i++;
 		selfunc = slprntr(stdout, format[i]);
-		plength += selfunc(args);
+		plength += selfunc.pfunc(args);
 		i++;
 	}
 }

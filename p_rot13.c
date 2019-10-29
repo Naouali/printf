@@ -8,12 +8,12 @@
  *
  * Return: String Length.
  */
-int p_rot13(va_list *params)
+int p_rot13(va_list *args)
 {
 	int length = 0, i = 0, k;
 	char from[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char to[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char *str = va_arg(*params, char *);
+	char *str = va_arg(*args, char *);
 
 	while (str[length])
 		length++;

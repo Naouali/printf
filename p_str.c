@@ -8,10 +8,10 @@
  * Return: int
  */
 
-int p_str(va_list *args)
+int p_str(va_list args)
 {
 int i = 0;
-char *str = va_arg(*args, char *);
+char *str = va_arg(args, char *);
 
 if (str == NULL)
 str = "(null)";

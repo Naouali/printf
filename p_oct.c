@@ -7,10 +7,10 @@
  *
  * Return: int.
  */
-int p_oct(va_list *params)
+int p_oct(va_list params)
 {
 	int length = 0;
-	unsigned int value = va_arg(*params, unsigned int);
+	unsigned int value = va_arg(params, unsigned int);
 
 	length = basecnv(value, 8, length) + 1;
 	return (length);

@@ -25,10 +25,10 @@ int pstrrev(char *str, int length)
  *
  * Return: String Length.
  */
-int p_rev(va_list *params)
+int p_rev(va_list params)
 {
 	int length = 0;
-	char *str = va_arg(*params, char *);
+	char *str = va_arg(params, char *);
 
 	if (str == NULL)
 		str = "(null)";
