@@ -30,7 +30,7 @@ int p_mhex(va_list *args)
 {
 	int length = 0;
 	unsigned int value = va_arg(*args, unsigned int);
-
+	
 	length = p_mhex_r(value, length) + 1;
 	return (length);
 }
