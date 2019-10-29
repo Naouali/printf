@@ -31,6 +31,7 @@ int p_oct(va_list *);
 int p_mhex(va_list *);
 int p_hex(va_list *);
 int p_bin(va_list *);
+int p_strS(va_list *);
 int p_spcl(va_list *);
 int p_rot13(va_list *);
 int p_rev(va_list *);

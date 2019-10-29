@@ -16,7 +16,7 @@ int done;
 stdout_t stdout[] = {
 {'c', p_char},
 {'s', p_str},
-{'S', p_str},
+{'S', p_strS},
 {'b', p_bin},
 {'i', p_int},
 {'d', p_dbl},

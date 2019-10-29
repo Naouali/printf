@@ -7,7 +7,7 @@
  * @length: The amount of digits to be printed.
  * Return: integer length.
  */
-int p_mhex_r(unsigned int value, int length)
+int p_mhex_r(unsigned long value, int length)
 {
 	if (value / 16)
 		length = p_mhex_r(value / 16, length + 1);
@@ -29,8 +29,22 @@ int p_mhex_r(unsigned int value, int length)
 int p_mhex(va_list *args)
 {
 	int length = 0;
-	unsigned int value = va_arg(*args, unsigned int);
+	unsigned long value = va_arg(*args, unsigned long);
 
-	length = p_mhex_r(value, length) + 1;
+	if (value == 0)
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('i');
+		_putchar('l');
+		_putchar(')');
+		length += 5;
+	}
+	else
+	{
+	_putchar('0');
+	_putchar('x');
+	length = p_mhex_r(value, length) + 3;
+	}
 	return (length);
 }
