@@ -8,24 +8,27 @@
  */
 int basecnv(unsigned int value, int b, int length)
 {
-if (value / b)
+if (!value)
 return (length);
 else if (b == 16)
 {
-if (value / b >= 10)
+if (value % b >= 10)
 {
-basecnv(value / b, b, length + 1);
-_putchar(value % b + 'A' - 10);
+length = basecnv(value / b, b, length + 1);
+putchar(value % b + 'A' - 10);
+return (length);
 }
 else
 {
-basecnv(value / b, b, length + 1);
-_putchar(value % b + '0');
+length = basecnv(value / b, b, length + 1);
+putchar(value % b + '0');
+return (length);
 }
 }
 else
 {
-basecnv(value / b, b, length + 1);
-_putchar(value % b + '0');
+length = basecnv(value / b, b, length + 1);
+putchar(value % b + '0');
+return (length);
 }
 }
