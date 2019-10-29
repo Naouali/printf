@@ -3,6 +3,8 @@
 
 #include <stdarg.h>
 
+typedef int (*pfunc)(va_list);
+
 /**
 * struct stdout_ - structure for symbols and functions
 *
@@ -14,6 +16,7 @@ typedef struct stdout_
 	char *sym;
 	int (*pfunc)(va_list);
 } stdout_t;
+
 
 int p_rint(unsigned int value, int length);
 int basecnv(unsigned int value, int b, int length);
@@ -31,7 +34,5 @@ int p_hex(va_list *args);
 int p_mhex(va_list *args);
 int p_rev(va_list *args);
 int p_rot13(va_list *args);
-
-
 
 #endif /* _PRINTF_H */
