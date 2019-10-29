@@ -44,7 +44,7 @@ int p_mhex(va_list *args)
 	{
 	_putchar('0');
 	_putchar('x');
-	length = p_mhex_r(value, length) + 1;
+	length = p_mhex_r(value, length) + 3;
 	}
 	return (length);
 }
