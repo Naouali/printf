@@ -15,21 +15,24 @@ int p_rot13(va_list *args)
 	char to[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char *str = va_arg(*args, char *);
 
-	while (str[length])
-		length++;
-	if (str == NULL)
-		str = "(null)";
-	for (i = 0; str[i]; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < 52; j++)
+		j = 0;
+		while ((from[j] != '\0') && (str[i] != from[j]))
 		{
-			if (from[j] == str[i])
-			{
-				_putchar(to[j]);
-				break;
-			}
+			j++;
+		}
+		if (str[i] == from[j])
+		{
+			_putchar(to[j]);
+			length++;
+		}
+		else if (from[j] == '\0')
+		{
+			_putchar(str[i]);
+			length++;
 		}
 	}
-
 	return (length);
+
 }
