@@ -15,17 +15,17 @@ pfunc slprntr(stdout_t stdout[], char format)
 	for (; i < stdout[i].sym; i++)
 		if (stdout[i].sym == format)
 			break;
-	return (stdout[i].pfunc); 
+	return (stdout[i].pfunc);
 }
 
 
 /**
-* _vfprint - function to print
+* _vfprintf - function to print
 * @stdout: struct of symbol and related function
 * @format: format string
 * @args: argument list
 *
-* return : int
+* Return: int
 */
 int _vfprintf(stdout_t stdout[], char *format, va_list args)
 {
