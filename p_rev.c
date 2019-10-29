@@ -14,21 +14,21 @@ int pstrrev(char *str, int length)
 {
 	if (str[0])
 	{
-		length = _print_rev_recursion(str + 1, length + 1);
+		length = pstrrev(str + 1, length + 1);
 		_putchar(str[0]);
 	}
 	return (length);
 }
 /**
  * p_rev - writes the string in reverse
- * @params: The name for va_list
+ * @args: The name for va_list
  *
  * Return: String Length.
  */
-int p_rev(va_list params)
+int p_rev(va_list *args)
 {
 	int length = 0;
-	char *str = va_arg(params, char *);
+	char *str = va_arg(*args, char *);
 
 	if (str == NULL)
 		str = "(null)";
