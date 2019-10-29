@@ -5,7 +5,7 @@
 
 /**
  * _printf - function to print anything
- * @format: given argument
+ * @format: given argument to the function
  * Return: int
  */
 
