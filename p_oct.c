@@ -3,14 +3,14 @@
 
 /**
  * p_oct- writes in octal
- * @params: The name for va_list
+ * @args: The name for va_list
  *
  * Return: int.
  */
-int p_oct(va_list params)
+int p_oct(va_list *args)
 {
 	int length = 0;
-	unsigned int value = va_arg(params, unsigned int);
+	unsigned int value = va_arg(*args, unsigned int);
 
 	length = basecnv(value, 8, length) + 1;
 	return (length);
