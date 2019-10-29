@@ -6,7 +6,7 @@
 /**
  * _printf - function to print anything
  * @format: given argument to the function
- * Return: int
+ * Return: integer
  */
 
 int _printf(const char *format, ...)
