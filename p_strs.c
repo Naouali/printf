@@ -13,7 +13,7 @@ int i = 0, n = 0, j = 0;
 unsigned int length = 0;
 
 str = va_arg(*args, char *);
-if (str)
+if (!str)
 str = "(null)";
 for (i = 0; str[i]; i++)
 {
